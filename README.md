@@ -1,13 +1,13 @@
-# Digitalworx
-##### Digitalworx: A Creative Digital Agency
+# Zendou.org
+##### ZMA Zendou Martial Arts
 
-Authors: [Monty George](mailto:monty@digitlworx.com)
+Authors: [Monty George](mailto:monty@digitalworx.com)
 
-Last Updated: 10/10/2017 Created: 10/10/2017
+Created: 8/12/2018
 
 ---
 
 ## Introduction
 
-This repository contains digitalworx.com custom website.This is a private repository for the Digitalworx agency. All content is covered by copyright. Please contact us with any questions.
+This repository contains the zendou.org custom website.This is a private repository managed by the Digitalworx agency. All content is covered by copyright. Please contact us with any questions.
 
