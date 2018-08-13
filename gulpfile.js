@@ -53,7 +53,7 @@ var DIST_PATH = 'public/assets/dist';
 // STYLES: Concat, List Errors, Minify, create Source Maps
 gulp.task('styles', function() {
 	console.log('Starting Styles Task')
-	return gulp.src(['public/assets/css/normalize.css', 'public/assets/css/hamburger.css', 'public/assets/css/animate.css', 'public/assets/css/main.css'])
+	return gulp.src(['public/assets/css/normalize.css', 'public/assets/css/animate.css', 'public/assets/css/main.css'])
 		.pipe(plumber(function (err){
 			console.log('Styles Task Error');
 			console.log(err);
@@ -106,7 +106,7 @@ gulp.task('watch', ['browserSync'], function () {
   // Reloads the browser whenever CSS files change
   gulp.watch('public/assets/css/**/*.css', ['styles:reload']); 
   // Reloads the browser whenever HTML or JS files change
-  gulp.watch('public/assets/**/*.html', browserSync.reload); 
+  gulp.watch('public/**/*.html', browserSync.reload); 
   gulp.watch('public/assets/js/**/*.js', ['scripts:reload']);
   gulp.watch('public/assets/img/**', ['images:reload']);
 });

@@ -1,3 +1,17 @@
+@charset "UTF-8";
+/* CSS Document
+	copyright: 	ZMA, All Rights Reserved
+	web: 		zendou.com
+	email: 		hello@digitalworx.com
+	version:	1.0
+	created: 	2018
+
+
+	File Contents:
+	 - CSS styles for Digitalworx.
+*/
+
+/*@import "animate.css";*/
 /*! HTML5 Boilerplate v6.1.0 | MIT License | https://html5boilerplate.com/ */
 
 /*
@@ -11,9 +25,9 @@
    ========================================================================== */
 
 html {
-    color: #222;
     font-size: 1em;
-    line-height: 1.4;
+    line-height: 1.6;
+	box-sizing: border-box;
 }
 
 /*
@@ -97,6 +111,54 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+html, body {
+    font-family: 'Raleway', Helvetica Neue, sans-serif !important;
+    font-size: 100%;
+	color: #fff;
+	background: #252525;
+	max-width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+h2, h3, p, small {
+	font-family: 'Raleway', Helvetica Neue, sans-serif;
+}
+
+#header {
+	margin-top: 24px;
+}
+
+
+#header .header-group .header-text {
+	height: 250px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#header .header-group .header-text h2 {
+	font-size: 28px;
+	font-weight: 600;
+	text-align: center;
+}
+
+#header .header-group .header-text h2 span {
+	font-size: 22px;
+}
+
+#header .header-group .header-logo {
+	height: 250px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#header .header-group .header-logo img {
+	max-width: 350px;
+}
 
 
 
