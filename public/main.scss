@@ -8,10 +8,9 @@
 
 
 	File Contents:
-	 - CSS styles for Digitalworx.
+	 - CSS styles for zendou.org.
 */
 
-/*@import "animate.css";*/
 /*! HTML5 Boilerplate v6.1.0 | MIT License | https://html5boilerplate.com/ */
 
 /*
@@ -19,6 +18,11 @@
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
  * Kroc Camen, and the H5BP dev community and team.
  */
+
+/*  Import SASS partials  */
+@import "normalize";
+@import "animate";
+
 
 /* ==========================================================================
    Base styles: opinionated defaults
@@ -111,11 +115,13 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+$black-back: #252525;
+
 html, body {
     font-family: 'Raleway', Helvetica Neue, sans-serif !important;
     font-size: 100%;
 	color: #fff;
-	background: #252525;
+	background: $black-back;
 	max-width: 100%;
 	margin: 0;
 	padding: 0;
@@ -126,28 +132,28 @@ h2, h3, p, small {
 }
 
 #header {
-	margin-top: 24px;
+	margin: 24px 0 24px 0;
 }
 
 
-#header .header-group .header-text {
+.header-text {
 	height: 250px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 }
 
-#header .header-group .header-text h2 {
+.header-text h2 {
 	font-size: 28px;
 	font-weight: 600;
 	text-align: center;
 }
 
-#header .header-group .header-text h2 span {
+.header-text h2 span {
 	font-size: 22px;
 }
 
-#header .header-group .header-logo {
+.header-logo {
 	height: 250px;
 	text-align: center;
 	display: flex;
@@ -156,14 +162,80 @@ h2, h3, p, small {
 	align-items: center;
 }
 
-#header .header-group .header-logo img {
+.header-logo img {
 	max-width: 350px;
+}
+
+section.intro {
+	position: relative;
+	background: #fff;
+	
+		h1 {
+		padding-top: 32px;
+		margin: 0;
+		font-family: "copperplate", Baskerville, Palatino, serif;
+		color: #ff0000;
+		font-size: 88px;
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: -0.05em;
+	  }
+
+}
+
+
+section.intro h2 {
+	margin-top: -8px;
+	color: #363636;
+	font-size: 29px;
+	font-weight: 600;
+	text-align: center;
+}
+
+section.intro .intro-group {
+	margin-top: 36px;
+}
+
+section.intro .intro-group p {
+	color: #363636;
+	font-size: 24px;
+	font-weight: 600;
+	text-align: left;
+	margin: 0 48px 12px 72px;
 }
 
 
 
 
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {}
 
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+	
+
+	
+	#header .header-group .header-text {
+		height: 60px;
+	}
+} 
+
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+	
+
+} 
+
+
+
+/* Small devices (portrait tablets and large phones, 480px and up) */
+@media only screen and (max-width: 480px) {
+	
+} 
 
 
 

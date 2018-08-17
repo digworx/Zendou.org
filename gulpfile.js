@@ -24,7 +24,8 @@ var concat = require("gulp-concat");
 var sourcemaps = require("gulp-sourcemaps");
 var autoprefixer = require("gulp-autoprefixer");
 var minifyCSS = require("gulp-minify-css");
-var zip = require("gulp-zip")
+var zip = require("gulp-zip");
+var sass = require("gulp-sass")
 
 // Path variables
 var IMAGES_PATH = 'public/assets/img/**/*.{png,jpeg,jpg,svg,gif}';
@@ -50,10 +51,29 @@ var DIST_PATH = 'public/assets/dist';
 });
 
 
-// STYLES: Concat, List Errors, Minify, create Source Maps
+//// STYLES: Concat, List Errors, Minify, create Source Maps
+//gulp.task('styles', function() {
+//	console.log('Starting Styles Task')
+//	return gulp.src(['public/assets/css/normalize.css', 'public/assets/css/animate.css', 'public/assets/css/main.css'])
+//		.pipe(plumber(function (err){
+//			console.log('Styles Task Error');
+//			console.log(err);
+//			this.emit('end');
+//	}))
+//		.pipe(sourcemaps.init())
+//		.pipe(autoprefixer())
+//		.pipe(concat('styles.css'))  //Concats to this file
+//		.pipe(minifyCSS())
+//		.pipe(sourcemaps.write())  //Create sourcemaps after concatenation
+//	    .pipe(rename({ suffix: ".min" }))  //Adds .min suffix
+//		.pipe(gulp.dest('public/assets/dist/css'))
+//		.pipe(notify({ title: "Gulp Recipes", message: "Styles Task: Success!", onLast: true }));
+//});
+
+// STYLES FOR SCSS: Concat, List Errors, Minify, create Source Maps
 gulp.task('styles', function() {
 	console.log('Starting Styles Task')
-	return gulp.src(['public/assets/css/normalize.css', 'public/assets/css/animate.css', 'public/assets/css/main.css'])
+	return gulp.src('public/assets/scss/styles.scss')
 		.pipe(plumber(function (err){
 			console.log('Styles Task Error');
 			console.log(err);
@@ -61,8 +81,9 @@ gulp.task('styles', function() {
 	}))
 		.pipe(sourcemaps.init())
 		.pipe(autoprefixer())
-		.pipe(concat('styles.css'))  //Concats to this file
-		.pipe(minifyCSS())
+		.pipe(sass({
+			outputStyle: 'compressed'
+	}))
 		.pipe(sourcemaps.write())  //Create sourcemaps after concatenation
 	    .pipe(rename({ suffix: ".min" }))  //Adds .min suffix
 		.pipe(gulp.dest('public/assets/dist/css'))
