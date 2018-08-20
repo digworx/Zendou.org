@@ -8,10 +8,9 @@
 
 
 	File Contents:
-	 - CSS styles for Digitalworx.
+	 - CSS styles for ZMA.
 */
 
-/*@import "animate.css";*/
 /*! HTML5 Boilerplate v6.1.0 | MIT License | https://html5boilerplate.com/ */
 
 /*
@@ -23,6 +22,13 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
+@import "_normalize";
+@import "_animate";
+@import "bootstrap/_functions";
+@import "bootstrap/_variables";
+@import "bootstrap/mixins/_breakpoints";
+@import "bootstrap/utilities/_display";
+
 
 html {
     font-size: 1em;
@@ -107,15 +113,25 @@ textarea {
     padding: 0.2em 0;
 }
 
+
 /* ==========================================================================
-   Author's custom styles
+   SASS variables
+   ========================================================================== */
+
+$background-grey: #252525;
+$red-text: #ff0000;
+$grey-text: #b7b7b7;
+
+
+/* ==========================================================================
+   Custom styles
    ========================================================================== */
 
 html, body {
     font-family: 'Raleway', Helvetica Neue, sans-serif !important;
     font-size: 100%;
 	color: #fff;
-	background: #252525;
+	background: #fff;
 	max-width: 100%;
 	margin: 0;
 	padding: 0;
@@ -126,116 +142,389 @@ h2, h3, p, small {
 }
 
 #header {
-	margin: 24px 0 24px 0;
+	margin: 0;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	background: $background-grey;
+	
+	@include media-breakpoint-down(xs) {
+		padding-top: 16px;
+		padding-bottom: 18px;
+	}
 }
 
 
 .header-text {
-	height: 250px;
+	height: 200px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-}
-
-.header-text h2 {
+	
+	@include media-breakpoint-down(sm) {
+		height: 30px;
+	}
+	
+	h2 {
 	font-size: 28px;
 	font-weight: 600;
 	text-align: center;
-}
+		
+		@include media-breakpoint-down(md) {
+		font-size: 20px;
+		}
+		
+		@include media-breakpoint-down(sm) {
+		font-size: 18px;
+		margin-bottom: 0;
+		}
+		
+		a {
+			color: #fff;
+			text-decoration: none;
+			
+			span {
+				font-size: 22px;
+			
+				.banner-zero-fix {
+					font-size: 28px;
+					
+					@include media-breakpoint-down(xs) {
+					font-size: 18px;
+					}
+				}
 
-.header-text h2 span {
-	font-size: 22px;
+			@include media-breakpoint-down(xs) {
+			font-size: 16px;
+			}
+	     }   
+	  }
+   }
 }
 
 .header-logo {
-	height: 250px;
+	height: 200px;
 	text-align: center;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-}
-
-.header-logo img {
-	max-width: 350px;
+	
+	@include media-breakpoint-down(sm) {
+		height: 180px;
+	}
+	
+	@include media-breakpoint-down(xs) {
+		height: 160px;
+	}
+	
+	img {
+		max-width: 320px;
+		
+		@include media-breakpoint-down(md) {
+		max-width: 280px;
+		}
+		
+		@include media-breakpoint-down(xs) {
+		max-width: 250px;
+		}
+	}
 }
 
 section.intro {
 	position: relative;
-	background: #fff;
-}
-
-section.intro h1 {
-	padding-top: 32px;
-	margin: 0;
-	font-family: "copperplate", Baskerville, Palatino, serif;
-	color: #ff0000;
-	font-size: 88px;
-	text-align: center;
-	text-transform: uppercase;
-	letter-spacing: -0.05em;
-}
-
-section.intro h2 {
-	margin-top: -8px;
-	color: #363636;
-	font-size: 29px;
-	font-weight: 600;
-	text-align: center;
-}
-
-section.intro .intro-group {
-	margin-top: 36px;
-}
-
-section.intro .intro-group p {
-	color: #363636;
-	font-size: 24px;
-	font-weight: 600;
-	text-align: left;
-	margin: 0 48px 12px 72px;
-}
-
-
-
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (max-width: 1200px) {}
-
-
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (max-width: 992px) {
+	padding-top: 8px;
+	background: #f8f8f8;
+	min-height: 480px;
+    overflow: auto;
 	
+		h1 {
+		padding: 38px 14px 0 14px;
+		margin: 0;
+		font-family: "copperplate", Baskerville, Palatino, serif;
+		color: #ff0000;
+		font-size: 88px;
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: -0.05em;
+		line-height: 70px;
+		margin-bottom: 12px;
+			
+			@include media-breakpoint-down(xs) {
+				font-size: 68px;
+				line-height: 50px;
+				padding-top: 12px;				
+				padding-left: 12px;
+				padding-right: 12px;
+				margin-bottom: 6px;
+			}
+		}
 
-	
-	#header .header-group .header-text {
-		height: 60px;
+		h2 {
+		margin-top: -4px;
+		padding: 0 18px 0 18px;
+		color: #363636;
+		font-size: 29px;
+		font-weight: 600;
+		text-align: center;
+			
+			@include media-breakpoint-down(xs) {
+				font-size: 21px;
+				margin-top: 0;
+			}
+		}
+
+		.intro-group {
+			margin: 36px auto;
+			max-width: 1400px;
+			
+			@include media-breakpoint-down(xs) {
+				margin-top: 0;
+				margin-bottom: 24px;
+			}
+			
+			p {
+			color: #444;
+			font-size: 24px;
+			font-weight: 600;
+			text-align: left;
+			margin: 0 48px 12px 72px;
+				
+			@include media-breakpoint-down(xs) {
+				font-size: 16px;
+				font-weight: 400;
+				margin: 0 12px 12px 12px;
+				}
+		}
 	}
-} 
+}
 
 
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (max-width: 768px) {
+section.feature-blocks {
 	
-
-} 
-
-
-
-/* Small devices (portrait tablets and large phones, 480px and up) */
-@media only screen and (max-width: 480px) {
+	background: $background-grey;
 	
-} 
+/*	.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+	}
+	*/
+	.no-gutters {
+	  margin-right: 0;
+	  margin-left: 0;
+
+	  > .col,
+	  > [class*="col-"] {
+		padding-right: 0;
+		padding-left: 0;
+	  }
+	}
+	
+	.feature-one {
+		img {
+			max-width: 100%;
+		}
+		
+		.feature-text-group {
+			padding-left: 6%;
+			padding-right: 6%;
+			
+				@include media-breakpoint-down(xs) {
+				padding: 10%;
+				}	
+			
+			
+			p {
+				font-size: 28px;
+				color: $grey-text;
+				line-height: 50px;
+				margin-bottom: 0;
+				
+				@include media-breakpoint-down(md) {
+				font-size: 22px;
+				line-height: 34px;
+				}
+				
+				@include media-breakpoint-down(sm) {
+				font-size: 18px;
+				line-height: 30px;
+				}
+				
+				@include media-breakpoint-down(xs) {
+				font-size: 24px;
+				line-height: 30px;
+				}				
+				
+			  &.lead-text {
+				  font-size: 32px;
+				  line-height: 42px;
+				  margin-bottom: 24px;
+				  color: $red-text;
+				  font-weight: 900;
+				  
+				  @include media-breakpoint-down(md) {
+				  font-size: 26px;
+				  line-height: 30px;
+				  margin-bottom: 12px;
+				  }
+				  
+				  @include media-breakpoint-down(sm) {
+				  font-size: 22px;
+				  line-height: 26px;
+				  }
+					  
+				  @include media-breakpoint-down(xs) {
+				  font-size: 25px;
+				  line-height: 32px;
+				  margin-bottom: 16px;
+				  }
+				}
+			  }
+		   }
+		}
+	}
+
+section.top-banner,
+section.bottom-banner {
+	overflow: auto;
+	
+	img {
+		width: 100%;
+	}
+}
 
 
+footer {
+	position: relative;
+	margin: 0;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	background: $background-grey;
+	
+	h3 {
+		color: #fff;
+		font-size: 28px;
+		line-height: 28px;
+		font-weight: 900;
+		margin-top: 32px;
+		padding: 0 12px 0 12px;
+		text-align: center;
+	}
+	
+	p {
+		color: #fff;
+		font-size: 22px;
+		line-height: 22px;
+		font-weight: 400;
+		margin-top: 6px;
+		padding: 0 12px 0 12px;
+		
+		@include media-breakpoint-down(xs) {
+			font-size: 20px;
+		}
+	}
+	
+	.footer-header {
+		h3 {
+			text-align: center;
+		}
+		p {
+			text-align: center;
+		}
+	}
+	
+	.footer-buttons {
+		
+		margin-bottom: 28px;
+		
+		.footer-button {
+			margin: 0 auto;
+			position: relative;
+			
+			.btn-content-group {
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+				height: 150px;
+				margin-left: 6px;
+				margin-right: 6px;
 
-
-
-
-
-
+			a {
+				width: 320px;
+				padding: 24px 24px 30px 24px;
+				margin-top: 24px;
+				border: 2px solid white;
+				font-size: 18px;
+				font-weight: 600;
+				color: #fff;
+				text-decoration:  none;
+				text-align: center;
+				vertical-align: middle;
+				transition: all 250ms ease-out 0s;
+				
+				&:hover {
+					background: #ff0000;
+					border-color: #ff0000;
+					color: $background-grey;
+				}
+				
+				span {
+					font-size: 26px;
+					font-weight: 600;
+				}
+				
+				span.footer-zero-fix {
+					font-size: 22px;
+				}
+			 }
+		 }
+	 }
+  }
+	
+	.facebook-link {
+		
+		p {
+			font-weight: 600;
+		}
+		
+		margin-bottom: 18px;
+		
+		a {
+			color: #fff;
+			text-decoration: none;
+			transition: all 250ms ease-out 0s;
+			
+			&:hover {
+				color: #ff0000;
+			}
+		}
+		
+	}
+	
+	.footer-logo {
+		
+		margin-top: 8px;
+		
+		img {
+			width: 168px;
+		}
+	}
+	
+	.footer-digworx {
+		margin: 32px 0 12px 0;
+		
+		a { 
+		    transition: all 250ms ease-out 0s;
+		  
+			&:hover {
+				opacity: 0.5;
+			}
+			
+		  img {
+		  width: 90px;
+		}
+	 }
+  }
+}
 
 
 

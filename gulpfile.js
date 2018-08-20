@@ -125,7 +125,7 @@ gulp.task('browserSync', function() {
 gulp.task('watch', ['browserSync'], function () {
   console.log('Starting Watch Tasks')
   // Reloads the browser whenever CSS files change
-  gulp.watch('public/assets/css/**/*.css', ['styles:reload']); 
+  gulp.watch('public/assets/scss/**/*.scss', ['styles:reload']); 
   // Reloads the browser whenever HTML or JS files change
   gulp.watch('public/**/*.html', browserSync.reload); 
   gulp.watch('public/assets/js/**/*.js', ['scripts:reload']);

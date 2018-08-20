@@ -1,13 +1,24 @@
 # humanstxt.org/
 # The humans responsible & technology colophon
 
-# TEAM
+                               
+    /* TEAM */
 
-    <name> -- <role> -- <twitter>
+                                
+    Design & Development: Monty George / Digitalworx
+
+                                
+    Site: digitalworx.com
+
+                                
+    Twitter: @digitalworx
+
+                                
+    Location: Evanston, IL, USA
 
 # THANKS
 
-    <name>
+    Otis Velma
 
 # TECHNOLOGY COLOPHON
 
