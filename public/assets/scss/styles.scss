@@ -147,6 +147,10 @@ h2, h3, p, small {
 	padding-bottom: 12px;
 	background: $background-grey;
 	
+	@include media-breakpoint-down(sm) {
+		padding-bottom: 21px;
+	}
+	
 	@include media-breakpoint-down(xs) {
 		padding-top: 16px;
 		padding-bottom: 18px;
@@ -188,10 +192,19 @@ h2, h3, p, small {
 				.banner-zero-fix {
 					font-size: 28px;
 					
+					@include media-breakpoint-down(sm) {
+					font-size: 22px;
+					}
+					
 					@include media-breakpoint-down(xs) {
 					font-size: 18px;
 					}
+
 				}
+				
+			@include media-breakpoint-down(sm) {
+			font-size: 18px;
+			}	
 
 			@include media-breakpoint-down(xs) {
 			font-size: 16px;
@@ -226,6 +239,20 @@ h2, h3, p, small {
 		
 		@include media-breakpoint-down(xs) {
 		max-width: 250px;
+		}
+	}
+}
+
+
+section.top-banner,
+section.bottom-banner {
+	overflow: auto;
+	
+	.banner-image {
+		width: 100%;
+		
+		img {
+		width: 100%;
 		}
 	}
 }
@@ -382,15 +409,6 @@ section.feature-blocks {
 		   }
 		}
 	}
-
-section.top-banner,
-section.bottom-banner {
-	overflow: auto;
-	
-	img {
-		width: 100%;
-	}
-}
 
 
 footer {
