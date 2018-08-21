@@ -188,9 +188,25 @@ h2, h3, p, small {
 			
 			span {
 				font-size: 22px;
+				
+			@include media-breakpoint-down(md) {
+			font-size: 19px;
+			}				
+				
+			@include media-breakpoint-down(sm) {
+			font-size: 18px;
+			}	
+
+			@include media-breakpoint-down(xs) {
+			font-size: 16px;
+			}				
 			
 				.banner-zero-fix {
 					font-size: 28px;
+					
+					@include media-breakpoint-down(md) {
+					font-size: 23px;
+					}
 					
 					@include media-breakpoint-down(sm) {
 					font-size: 22px;
@@ -199,20 +215,11 @@ h2, h3, p, small {
 					@include media-breakpoint-down(xs) {
 					font-size: 18px;
 					}
-
 				}
-				
-			@include media-breakpoint-down(sm) {
-			font-size: 18px;
-			}	
-
-			@include media-breakpoint-down(xs) {
-			font-size: 16px;
-			}
-	     }   
-	  }
-   }
-}
+	        }   
+	    }
+     }
+ }
 
 .header-logo {
 	height: 200px;
@@ -275,6 +282,7 @@ section.intro {
 		letter-spacing: -0.05em;
 		line-height: 70px;
 		margin-bottom: 12px;
+		word-spacing: 0.15em;
 			
 			@include media-breakpoint-down(xs) {
 				font-size: 68px;
