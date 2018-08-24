@@ -276,17 +276,19 @@ section.intro {
 		margin: 0;
 		font-family: "copperplate", Baskerville, Palatino, serif;
 		color: #ff0000;
-		font-size: 88px;
+		font-size: 96px;
 		text-align: center;
 		text-transform: uppercase;
 		letter-spacing: -0.05em;
-		line-height: 70px;
+		line-height: 74px;
 		margin-bottom: 12px;
 		word-spacing: 0.15em;
+		-webkit-font-smoothing: antialiased;
 			
-			@include media-breakpoint-down(xs) {
-				font-size: 68px;
-				line-height: 50px;
+			@include media-breakpoint-down(sm) {
+				font-size: 78px;
+				line-height: 56px;
+				letter-spacing: -0.09em;
 				padding-top: 12px;				
 				padding-left: 12px;
 				padding-right: 12px;
@@ -324,17 +326,17 @@ section.intro {
 			p {
 			color: #444;
 			font-size: 24px;
-			font-weight: 600;
+			font-weight: 500;
 			text-align: left;
 			margin: 0 5% 2% 6%;
 				
 			@include media-breakpoint-down(md) {
-				margin: 0 32px 12px 64px;
+				margin: 0 32px 12px 58px;
 				}
 				
 			@include media-breakpoint-down(xs) {
 				font-size: 16px;
-				font-weight: 400;
+				font-weight: 500;
 				margin: 0 12px 12px 12px;
 				}
 		}
@@ -447,7 +449,7 @@ footer {
 	p {
 		color: #fff;
 		font-size: 22px;
-		line-height: 22px;
+		line-height: 26px;
 		font-weight: 400;
 		margin-top: 6px;
 		padding: 0 12px 0 12px;
