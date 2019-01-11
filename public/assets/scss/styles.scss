@@ -32,7 +32,7 @@
 
 html {
     font-size: 1em;
-    line-height: 1.6;
+    line-height: 1.15;
 	box-sizing: border-box;
 }
 
@@ -272,7 +272,7 @@ section.intro {
     overflow: auto;
 	
 		h1 {
-		padding: 38px 14px 0 14px;
+		padding: 38px 22px 0 22px;
 		margin: 0;
 		font-family: "copperplate", Baskerville, Palatino, serif;
 		color: #ff0000;
@@ -280,7 +280,7 @@ section.intro {
 		text-align: center;
 		text-transform: uppercase;
 		letter-spacing: -0.05em;
-		line-height: 74px;
+		line-height: 78px;
 		margin-bottom: 12px;
 		word-spacing: 0.15em;
 		-webkit-font-smoothing: antialiased;
@@ -316,11 +316,11 @@ section.intro {
 		}
 
 		.intro-group {
-			margin: 36px auto;
+			margin: 18px auto 32px;
 			max-width: 1400px;
 			
 			@include media-breakpoint-down(xs) {
-				margin: 0 16px 24px 16px;
+				margin: 12px 16px 24px 16px;
 			}
 			
 			p {
@@ -433,7 +433,6 @@ footer {
 	position: relative;
 	margin: 0;
 	padding-top: 12px;
-	padding-bottom: 12px;
 	background: $background-grey;
 	
 	h3 {
@@ -546,7 +545,8 @@ footer {
 	}
 	
 	.footer-digworx {
-		margin: 32px 0 12px 0;
+		display: inline-block;
+		margin: 32px 0 36px 0;
 		
 		a { 
 		    transition: all 250ms ease-out 0s;
@@ -556,6 +556,7 @@ footer {
 			}
 			
 		  img {
+		  display: inline-block;
 		  width: 90px;
 		}
 	 }
